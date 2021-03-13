@@ -7,8 +7,8 @@ export default function Tempo(props) {
 
   return (
     <>
-      <h1>{props.dataStringStatic} (Dynamic)</h1>
-      <h1>{dataStringDynamic} (Static)</h1>
+      <h1>{props.dataStringStatic} (Static)</h1>
+      <h1>{dataStringDynamic} (Dynamic)</h1>
     </>
   )
 }
@@ -21,6 +21,5 @@ export function getStaticProps() {
     props: {
       dataStringStatic
     },
-    revalidate: 5
   }
 }
