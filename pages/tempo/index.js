@@ -20,7 +20,6 @@ export function getStaticProps() {
   return {
     props: {
       dataStringDynamic
-    },
-    revalidate: 1
+    }
   }
 }
