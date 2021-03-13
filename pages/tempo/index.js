@@ -1,9 +1,19 @@
 import React from 'react'
+import api from '../../services/api'
 
 
 export default function Tempo(props) {
   const data = new Date()
   const dataStringDynamic = data.toGMTString()
+
+  async function getApiData() {
+    const apiData = await api.get('geral')
+
+    return apiData.data
+  }
+
+  console.log(getApiData)
+  
 
   return (
     <>
