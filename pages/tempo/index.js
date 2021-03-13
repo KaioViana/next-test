@@ -12,7 +12,7 @@ export default function Tempo(props) {
     return apiData.data
   }
 
-  console.log(getApiData)
+  console.log(getApiData())
   
 
   return (
