@@ -21,5 +21,6 @@ export function getStaticProps() {
     props: {
       dataStringStatic
     },
+    revalidate: 5
   }
 }
