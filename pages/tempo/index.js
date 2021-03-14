@@ -3,33 +3,23 @@ import api from '../../services/api'
 
 
 export default function Tempo(props) {
-  const data = new Date()
-  const dataStringDynamic = data.toGMTString()
-
-  async function getApiData() {
-    const apiData = await api.get('geral')
-
-    return apiData.data
-  }
-
-  console.log(getApiData())
-  
+  console.log(props.apiData.contatos[0].titulo)
 
   return (
     <>
-      <h1>{props.dataStringStatic} (Static)</h1>
-      <h1>{dataStringDynamic} (Dynamic)</h1>
     </>
   )
 }
 
-export function getStaticProps() {
-  const data = new Date()
-  const dataStringStatic = data.toGMTString()
+export async function getStaticProps() {
+  
+  const res = await api.get('geral')
+  const apiData = res.data
+  console.log('StaticProps')
 
   return {
     props: {
-      dataStringStatic
+      apiData
     },
     revalidate: 5
   }
