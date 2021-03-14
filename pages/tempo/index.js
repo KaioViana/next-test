@@ -3,10 +3,11 @@ import api from '../../services/api'
 
 
 export default function Tempo(props) {
-  console.log(props.apiData.contatos[0].titulo)
+  
 
   return (
     <>
+      <h1>{props.apiData.contatos[0].titulo}</h1>
     </>
   )
 }
