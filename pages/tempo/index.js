@@ -9,6 +9,7 @@ export default function Tempo(props) {
     <>
       <h1>{props.res.data.contatos[0].titulo} (static)</h1>
       <h1>{data.contatos[0].titulo} (dynamic)</h1>
+      <h1>{props.dataString} (static)</h1>
     </>
   )
 }
@@ -16,6 +17,8 @@ export default function Tempo(props) {
 export async function getStaticProps() {
   const manifest = await require('../../lib/createManifest').manifests()
   
+  const data = new Date()
+  const dataString = data.toGMTString()
   const res = await api.get('geral')
   const apiData = res.data
   console.log('StaticProps')
@@ -23,7 +26,7 @@ export async function getStaticProps() {
   return {
     props: {
       apiData,
-      res
+      dataString
     },
     revalidate: 1
   }
