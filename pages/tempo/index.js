@@ -15,7 +15,7 @@ export default function Tempo(props) {
 }
 
 export async function getStaticProps() {
-  // const manifest = await require('../../lib/createManifest').manifests()
+  const manifest = await require('../../lib/createManifest').manifests()
   
   const data = new Date()
   const dataString = data.toGMTString()
