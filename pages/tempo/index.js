@@ -1,6 +1,7 @@
 import React from 'react'
 import api from '../../services/api'
-import data from "../../global/global-data.json";
+import data from '../../global/global-data.json'
+import manifests from '../../lib/createManifest'
 
 
 export default function Tempo(props) {
@@ -15,7 +16,7 @@ export default function Tempo(props) {
 }
 
 export async function getStaticProps() {
-  const manifest = await require('../../lib/createManifest').manifests()
+  manifests()
   
   const data = new Date()
   const dataString = data.toGMTString()

@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "create-manifest": "node ./lib/createManifest",
-    "dev": "npm run create-manifest && next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
