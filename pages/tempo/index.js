@@ -16,7 +16,7 @@ export default function Tempo(props) {
 }
 
 export async function getStaticProps() {
-  manifests()
+ var manifestsData = await manifests()
   
   const data = new Date()
   const dataString = data.toGMTString()
@@ -28,7 +28,8 @@ export async function getStaticProps() {
   return {
     props: {
       dataString,
-      apiData
+      apiData,
+      manifestsData
     },
     revalidate: 5
   }
