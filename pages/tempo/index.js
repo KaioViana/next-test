@@ -7,7 +7,7 @@ export default function Tempo(props) {
   
   return (
     <>
-      <h1>{props.apiData.contatos[0].titulo} (static)</h1>
+      <h1>{props.res.data.contatos[0].titulo} (static)</h1>
       <h1>{data.contatos[0].titulo} (dynamic)</h1>
     </>
   )
@@ -23,6 +23,7 @@ export async function getStaticProps() {
   return {
     props: {
       apiData,
+      res
     },
     revalidate: 1
   }
