@@ -7,7 +7,7 @@ export default function Tempo(props) {
   
   return (
     <>
-      <h1>{props.res.data.contatos[0].titulo} (static)</h1>
+      <h1>{props.apiData.contatos[0].titulo} (static)</h1>
       <h1>{data.contatos[0].titulo} (dynamic)</h1>
       <h1>{props.dataString} (static)</h1>
     </>
@@ -19,6 +19,7 @@ export async function getStaticProps() {
   
   const data = new Date()
   const dataString = data.toGMTString()
+  
   const res = await api.get('geral')
   const apiData = res.data
   console.log('StaticProps')
