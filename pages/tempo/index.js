@@ -9,7 +9,7 @@ export default function Tempo(props) {
   return (
     <>
       <h1>{props.apiData.contatos[0].titulo} (static)</h1>
-      <h1>{data.contatos[0].titulo} (dynamic)</h1>
+      <h1>{props.dataJson.contatos[0].titulo} (dynamic)</h1>
     </>
   )
 }
@@ -17,16 +17,18 @@ export default function Tempo(props) {
 export async function getStaticProps() {
   manifests()
   
+  const dataJson = data
   
   const res = await api.get('geral')
   const apiData = res.data
-  
-  data.contatos[0].titulo = apiData.contatos[0].titulo
+
+  dataJson.contatos[0].titulo = apiData.contatos[0].titulo
   console.log('StaticProps')
 
   return {
     props: {
       apiData,
+      dataJson
     },
     revalidate: 5
   }
