@@ -1,6 +1,6 @@
 import React from 'react'
 import api from '../../services/api'
-import data from '../../global/global-data.json'
+import data from '../../public/global/global-data.json'
 import manifests from '../../lib/createManifest'
 
 
